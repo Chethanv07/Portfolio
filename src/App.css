@@ -1,0 +1,147 @@
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.custom-navbar {
+  background: linear-gradient(135deg, #e6f0fa 0%, #f8f9fa 100%);
+  padding: 10px 0;
+}
+
+.logo {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 1.5rem;
+}
+
+.menu-container {
+  background-color: #ffffff;
+  padding: 8px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: #2c3e50 !important;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.premium-link {
+  background-color: #1E90FF;
+  color: #ffffff !important;
+  padding: 6px 16px;
+  border-radius: 6px;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.premium-link:hover {
+  background-color: #0056b3;
+  color: #ffffff !important;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #e6f0fa 0%, #d6e0ff 100%);
+  min-height: 100vh;
+  padding: 30px 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.z-1 {
+  z-index: 1;
+}
+
+.display-3 {
+  color: #2c3e50;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: #555;
+}
+
+.text-muted {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.hero-section .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar {
+  z-index: 1000;
+}
+
+footer {
+  background-color: #212529;
+  padding: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 20px 15px;
+    min-height: 80vh;
+  }
+
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .text-muted {
+    font-size: 0.9rem;
+  }
+
+  .hero-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu-container {
+    padding: 8px 10px;
+  }
+
+  .nav-link,
+  .premium-link {
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .display-3 {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .text-muted {
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}
