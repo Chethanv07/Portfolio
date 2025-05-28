@@ -1,15 +1,20 @@
+/* General Body and HTML Styles */
 body {
   font-family: 'Poppins', sans-serif;
   color: #333;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Navbar Styles */
 .custom-navbar {
   background: #f0f0f0;
   padding: 15px 0;
@@ -44,62 +49,6 @@ html {
 .logo:hover .logo-icon {
   transform: rotate(360deg);
   color: #0D6EFD;
-}
-
-/* src/Skills.css or add to src/App.css */
-
-.skills-card {
-  border-radius: 10px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.skills-card:hover {
-  transform: translateY(-5px);
-  /* Lifts the card slightly on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  /* Stronger shadow on hover */
-}
-
-.skills-card .card-title {
-  font-weight: 600;
-  color: #007bff;
-  /* Bootstrap primary blue, adjust as needed */
-}
-
-.skills-card ul {
-  padding-left: 0;
-  /* Remove default list padding */
-}
-
-.skills-card .skill-item {
-  padding: 5px 0;
-  border-bottom: 1px dashed #eee;
-  /* Dotted line separator */
-  color: #333;
-  /* Darker text for skills */
-}
-
-.skills-card .skill-item:last-child {
-  border-bottom: none;
-  /* No border for the last item */
-}
-
-/* Optional: Dark mode adjustments if you have a dark mode enabled */
-body.dark-mode .skills-card {
-  background-color: #343a40;
-  /* Darker background for cards */
-  color: #f8f9fa;
-  /* Lighter text */
-}
-
-body.dark-mode .skills-card .card-title {
-  color: #17a2b8;
-  /* A different highlight color for dark mode */
-}
-
-body.dark-mode .skills-card .skill-item {
-  border-bottom-color: #555;
-  color: #ced4da;
 }
 
 .menu-container {
@@ -170,16 +119,14 @@ body.dark-mode .skills-card .skill-item {
   transform: scale(1.1);
 }
 
+/* Pill Button Style (used in Home section for "Download Resume") */
 .pill-button {
   display: inline-block;
   padding: 10px 30px;
   border-radius: 50px;
-  /* Pill shape */
   background: transparent;
   border: 1.5px solid #0D6EFD;
-  /* Blue border */
   color: #0D6EFD !important;
-  /* Blue text */
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -190,20 +137,24 @@ body.dark-mode .skills-card .skill-item {
   color: #fff !important;
 }
 
+/* Section General Styles */
 .section {
   padding: 60px 15px;
   width: 100vw;
   margin: 0;
   scroll-margin-top: 80px;
-  /* Offset for sticky navbar */
+  box-sizing: border-box;
 }
 
 #home {
   background: linear-gradient(135deg, #e6f0fa 0%, #d6e0ff 100%);
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
+
 
 #about {
   background-color: #f5f5f5;
@@ -256,6 +207,47 @@ body.dark-mode .skills-card .skill-item {
   justify-content: center;
 }
 
+/* Skills Section Specific Styles */
+.skills-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #343a40;
+}
+
+.skills-category {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.skill-badge {
+  background-color: transparent !important;
+  border: 1.5px solid #0D6EFD;
+  color: #0D6EFD !important;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill-badge:hover {
+  background-color: #0D6EFD !important;
+  color: #ffffff !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+}
+
+.skill-badge svg {
+  color: #0D6EFD;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.skill-badge:hover svg {
+  color: #ffffff;
+}
+
 .navbar {
   z-index: 1000;
 }
@@ -266,9 +258,86 @@ footer {
   padding: 20px 0;
   width: 100vw;
   margin: 0;
+  margin-top: auto;
 }
 
-/* Responsive adjustments */
+/* Skills Section Specific Styles */
+.skills-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #343a40;
+}
+
+.skills-category {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.skill-badge {
+  background-color: transparent !important;
+  border: 1.5px solid #0D6EFD;
+  color: #0D6EFD !important;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill-badge:hover {
+  background-color: #0D6EFD !important;
+  color: #ffffff !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+}
+
+.skill-badge svg {
+  color: #0D6EFD;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+.skill-badge:hover svg {
+  color: #ffffff;
+}
+
+/* Projects Section Specific Styles */
+.projects-heading {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #343a40;
+}
+
+.project-card {
+  background-color: transparent !important;
+  border: 1.5px solid #0D6EFD;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.project-card:hover {
+  background-color: #0D6EFD !important;
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+}
+
+.project-card .card-body {
+  color: #333;
+}
+
+.project-card:hover .card-body {
+  color: #ffffff;
+}
+
+.project-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Responsive Adjustments */
+/*
 @media (max-width: 992px) {
   .section {
     padding: 40px 15px;
@@ -309,6 +378,32 @@ footer {
     margin-left: 0 !important;
     text-align: center;
   }
+
+  .skills-heading {
+    font-size: 2.5rem;
+  }
+
+  .skills-category {
+    font-size: 1.3rem;
+  }
+
+  .skill-badge {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .skill-badge svg {
+    font-size: 0.9rem;
+    margin-right: 6px;
+  }
+
+  .projects-heading {
+    font-size: 2.5rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -335,4 +430,72 @@ footer {
   .custom-navbar {
     padding: 10px 0;
   }
+
+  .skills-heading {
+    font-size: 2rem;
+  }
+
+  .skills-category {
+    font-size: 1.2rem;
+  }
+
+  .skill-badge {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+
+  .skill-badge svg {
+    font-size: 0.85rem;
+    margin-right: 5px;
+  }
+
+  .projects-heading {
+    font-size: 2rem;
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
 }
+
+/* Responsive Adjustments (Relevant Excerpt) */
+/*
+@media (max-width: 992px) {
+  .skills-heading {
+    font-size: 2.5rem;
+  }
+
+  .skills-category {
+    font-size: 1.3rem;
+  }
+
+  .skill-badge {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  .skill-badge svg {
+    font-size: 0.9rem;
+    margin-right: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-heading {
+    font-size: 2rem;
+  }
+
+  .skills-category {
+    font-size: 1.2rem;
+  }
+
+  .skill-badge {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+
+  .skill-badge svg {
+    font-size: 0.85rem;
+    margin-right: 5px;
+  }
+}/*

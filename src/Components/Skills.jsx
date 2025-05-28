@@ -1,21 +1,41 @@
 import React from 'react';
-import { Container, Row, Col, Card } from 'react-bootstrap';
-import { motion } from 'framer-motion'; // Import motion from framer-motion
+import { Container, Row, Col, Badge } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJava, faPython, faJs, faHtml5, faCss3Alt, faBootstrap, faReact, faNodeJs, faGit } from '@fortawesome/free-brands-svg-icons';
+import { faDatabase, faCode } from '@fortawesome/free-solid-svg-icons';
 
-const skills = {
-    Languages: ['Core Java', 'Python', 'JavaScript', 'HTML', 'CSS'],
-    Frameworks: ['Bootstrap', 'React', 'Node.js', 'Express.js'],
-    Tools: ['Git', 'SQL', 'MongoDB', 'Android Studio', 'VS Code', 'Docker'],
-    Concepts: ['OOP', 'Data Structures', 'Algorithms', 'RESTful APIs', 'Database Design']
+// Merged skills array (no category names)
+const skills = [
+    'Core Java', 'Python', 'JavaScript', 'HTML', 'CSS',
+    'Bootstrap', 'React', 'Node.js', 'Express.js',
+    'Git', 'SQL', 'MongoDB', 'Android Studio', 'VS Code'
+];
+
+const skillIcons = {
+    'corejava': faJava,
+    'python': faPython,
+    'javascript': faJs,
+    'html': faHtml5,
+    'css': faCss3Alt,
+    'bootstrap': faBootstrap,
+    'react': faReact,
+    'node.js': faNodeJs,
+    'express.js': faNodeJs,
+    'git': faGit,
+    'sql': faDatabase,
+    'mongodb': faDatabase,
+    'androidstudio': faCode,
+    'vscode': faCode
 };
 
-const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
+const pillVariants = {
+    hidden: { opacity: 0, y: 20 },
     visible: {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.6,
+            duration: 0.5,
             ease: "easeOut"
         }
     }
@@ -23,33 +43,29 @@ const cardVariants = {
 
 const Skills = () => (
     <Container className="my-5">
-        <h2 className="text-center mb-4">Skills</h2>
+        <h2 className="display-3 fw-bold mb-4 text-center text-black">Skills</h2>
         <Row className="justify-content-center">
-            {Object.keys(skills).map((category, index) => (
-                <Col md={6} lg={4} key={category} className="mb-4">
-                    {/* Use motion.div and apply variants */}
-                    <motion.div
-                        variants={cardVariants}
-                        initial="hidden"
-                        whileInView="visible" // Animate when in view
-                        viewport={{ once: true, amount: 0.5 }} // Trigger once, when 50% of the element is visible
-                        transition={{ delay: index * 0.1 }} // Stagger delay
-                    >
-                        <Card className="h-100 shadow-sm skills-card">
-                            <Card.Body>
-                                <Card.Title className="text-primary fs-4 mb-3">{category}</Card.Title>
-                                <ul className="list-unstyled">
-                                    {skills[category].map((skill, skillIndex) => (
-                                        <li key={skillIndex} className="skill-item">
-                                            {skill}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </Card.Body>
-                        </Card>
-                    </motion.div>
-                </Col>
-            ))}
+            {skills.map((skill, skillIndex) => {
+                const formattedSkill = skill.toLowerCase().replace(/\s+/g, '');
+                return (
+                    <Col xs="auto" key={skillIndex} className="mb-2">
+                        <motion.div
+                            variants={pillVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{ delay: skillIndex * 0.1 }}
+                        >
+                            <Badge pill className="p-2 skill-badge text-black bg-light border">
+                                {skillIcons[formattedSkill] && (
+                                    <FontAwesomeIcon icon={skillIcons[formattedSkill]} style={{ marginRight: '8px', color: 'black' }} />
+                                )}
+                                {skill}
+                            </Badge>
+                        </motion.div>
+                    </Col>
+                );
+            })}
         </Row>
     </Container>
 );
