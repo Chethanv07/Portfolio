@@ -1,29 +1,32 @@
 import React from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Navbar, Nav } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircle, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const Navigation = () => (
     <Navbar expand="lg" className="custom-navbar">
-        <Container>
-            <Navbar.Brand as={Link} to="/" className="logo">
-                <FontAwesomeIcon icon={faCircle} style={{ color: '#1E90FF', marginRight: '8px' }} />
-                Chethan V
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <div className="menu-container">
-                    <Nav className="mx-auto">
-                        <Nav.Link as={Link} to="/" className="nav-link">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/about" className="nav-link">About</Nav.Link>
-                        <Nav.Link as={Link} to="/skills" className="nav-link">Skills</Nav.Link>
-                        <Nav.Link as={Link} to="/projects" className="premium-link">Projects</Nav.Link>
-                        <Nav.Link as={Link} to="/contact" className="nav-link">Contact</Nav.Link>
-                    </Nav>
-                </div>
-            </Navbar.Collapse>
-        </Container>
+        <Navbar.Brand as="a" href="#home" className="logo ms-3">
+            <FontAwesomeIcon icon={faCircle} className="logo-icon" style={{ marginRight: '8px' }} />
+            Chethan V
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" className="me-3" />
+        <Navbar.Collapse id="basic-navbar-nav">
+            <div className="menu-container mx-auto">
+                <Nav>
+                    <Nav.Link as="a" href="#home" className="nav-link">Home</Nav.Link>
+                    <Nav.Link as="a" href="#about" className="nav-link">About</Nav.Link>
+                    <Nav.Link as="a" href="#skills" className="nav-link">Skills</Nav.Link>
+                    <Nav.Link as="a" href="#projects" className="nav-link">Projects</Nav.Link>
+                    <Nav.Link as="a" href="#" className="nav-link">Resume</Nav.Link>
+                </Nav>
+            </div>
+            <Nav className="ms-auto me-3">
+                <Nav.Link as="a" href="#contact" className="premium-link">
+                    <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: '8px' }} />
+                    Contact
+                </Nav.Link>
+            </Nav>
+        </Navbar.Collapse>
     </Navbar>
 );
 

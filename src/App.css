@@ -1,53 +1,224 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #333;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .custom-navbar {
-  background: linear-gradient(135deg, #e6f0fa 0%, #f8f9fa 100%);
-  padding: 10px 0;
+  background: #f0f0f0;
+  padding: 15px 0;
+  width: 100vw;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  font-weight: 700;
-  color: #2c3e50;
-  font-size: 1.5rem;
+  font-weight: 800;
+  color: #343a40;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo-icon {
+  color: #0D6EFD;
+  font-size: 1.4rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo:hover .logo-icon {
+  transform: rotate(360deg);
+  color: #0D6EFD;
+}
+
+/* src/Skills.css or add to src/App.css */
+
+.skills-card {
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skills-card:hover {
+  transform: translateY(-5px);
+  /* Lifts the card slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Stronger shadow on hover */
+}
+
+.skills-card .card-title {
+  font-weight: 600;
+  color: #007bff;
+  /* Bootstrap primary blue, adjust as needed */
+}
+
+.skills-card ul {
+  padding-left: 0;
+  /* Remove default list padding */
+}
+
+.skills-card .skill-item {
+  padding: 5px 0;
+  border-bottom: 1px dashed #eee;
+  /* Dotted line separator */
+  color: #333;
+  /* Darker text for skills */
+}
+
+.skills-card .skill-item:last-child {
+  border-bottom: none;
+  /* No border for the last item */
+}
+
+/* Optional: Dark mode adjustments if you have a dark mode enabled */
+body.dark-mode .skills-card {
+  background-color: #343a40;
+  /* Darker background for cards */
+  color: #f8f9fa;
+  /* Lighter text */
+}
+
+body.dark-mode .skills-card .card-title {
+  color: #17a2b8;
+  /* A different highlight color for dark mode */
+}
+
+body.dark-mode .skills-card .skill-item {
+  border-bottom-color: #555;
+  color: #ced4da;
 }
 
 .menu-container {
-  background-color: #ffffff;
-  padding: 8px 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 248, 225, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .nav-link {
-  color: #2c3e50 !important;
-  margin: 0 10px;
-  font-size: 1rem;
+  color: #343a40 !important;
+  margin: 0 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #0D6EFD;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #0D6EFD !important;
 }
 
 .premium-link {
-  background-color: #1E90FF;
+  background-color: #0D6EFD;
   color: #ffffff !important;
-  padding: 6px 16px;
-  border-radius: 6px;
-  margin: 0 10px;
-  transition: background-color 0.3s ease;
+  padding: 8px 20px;
+  border-radius: 8px;
+  margin: 0 15px;
+  font-weight: 600;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
 }
 
 .premium-link:hover {
-  background-color: #0056b3;
+  background-color: #0D6EFD;
   color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.5);
+  transform: scale(1.05);
 }
 
-.hero-section {
+.premium-link svg {
+  color: #ffffff;
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.premium-link:hover svg {
+  transform: scale(1.1);
+}
+
+.pill-button {
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 50px;
+  /* Pill shape */
+  background: transparent;
+  border: 1.5px solid #0D6EFD;
+  /* Blue border */
+  color: #0D6EFD !important;
+  /* Blue text */
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pill-button:hover {
+  background: linear-gradient(45deg, #0D6EFD, #1e90ff);
+  color: #fff !important;
+}
+
+.section {
+  padding: 60px 15px;
+  width: 100vw;
+  margin: 0;
+  scroll-margin-top: 80px;
+  /* Offset for sticky navbar */
+}
+
+#home {
   background: linear-gradient(135deg, #e6f0fa 0%, #d6e0ff 100%);
   min-height: 100vh;
-  padding: 30px 15px;
   position: relative;
   overflow: hidden;
+}
+
+#about {
+  background-color: #f5f5f5;
+}
+
+#skills {
+  background-color: #eeeeee;
+}
+
+#projects {
+  background-color: #e0e0e0;
+}
+
+#contact {
+  background-color: #d5d5d5;
 }
 
 .hero-background {
@@ -66,7 +237,7 @@ body {
 }
 
 .display-3 {
-  color: #2c3e50;
+  color: #343a40;
 }
 
 .lead {
@@ -79,7 +250,7 @@ body {
   line-height: 1.6;
 }
 
-.hero-section .row {
+.section .row {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,15 +261,18 @@ body {
 }
 
 footer {
-  background-color: #212529;
+  background-color: #343a40;
+  color: #ffffff;
   padding: 20px 0;
+  width: 100vw;
+  margin: 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 992px) {
-  .hero-section {
-    padding: 20px 15px;
-    min-height: 80vh;
+  .section {
+    padding: 40px 15px;
+    min-height: auto;
   }
 
   .display-3 {
@@ -113,18 +287,27 @@ footer {
     font-size: 0.9rem;
   }
 
-  .hero-section .row {
+  .section .row {
     flex-direction: column;
     text-align: center;
   }
 
   .menu-container {
-    padding: 8px 10px;
+    padding: 10px 15px;
   }
 
   .nav-link,
   .premium-link {
     margin: 5px 0;
+  }
+
+  .nav-link::after {
+    bottom: 0;
+  }
+
+  .ms-auto {
+    margin-left: 0 !important;
+    text-align: center;
   }
 }
 
@@ -142,6 +325,14 @@ footer {
   }
 
   .logo {
+    font-size: 1.4rem;
+  }
+
+  .logo-icon {
     font-size: 1.2rem;
+  }
+
+  .custom-navbar {
+    padding: 10px 0;
   }
 }

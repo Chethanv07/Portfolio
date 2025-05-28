@@ -2,14 +2,24 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 
 const About = () => (
-    <Container className="my-5">
-        <h2>About Me</h2>
-        <p>
-            I’m Chethan, an MCA student at Dayananda Sagar Academy (CGPA: 8.2), passionate about building impactful web and mobile solutions. My goal is to contribute to innovative projects and grow as a developer.
-        </p>
-        <p>
-            <a href="path-to-resume.pdf" target="_blank" rel="noopener noreferrer">Download My Resume</a>
-        </p>
-    </Container>
+    <section id="about" className="section">
+        <Container className="text-center">
+            <h2 className="display-3 fw-bold mb-4">About Me</h2>
+            <p className="lead mb-4">
+                I’m Chethan V, a passionate Full-Stack Developer with hands-on experience in building scalable web and mobile applications.
+                I specialize in creating impactful digital solutions using modern technologies and frameworks.
+            </p>
+
+            <a
+                href="CHETHAN-V-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="pill-button"
+            >
+                Download Resume
+            </a>
+        </Container>
+    </section>
 );
-export default About; // Should be a default export
+
+export default About;

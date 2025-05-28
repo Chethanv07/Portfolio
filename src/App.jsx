@@ -1,6 +1,5 @@
-// src/App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Navbar from './Components/Navbar.jsx';
 import Footer from './Components/Footer.jsx';
 import Home from './Components/Home.jsx';
@@ -13,17 +12,60 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <motion.section
+        id="home"
+        className="section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Home />
+      </motion.section>
+      <motion.section
+        id="about"
+        className="section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <About />
+      </motion.section>
+      <motion.section
+        id="skills"
+        className="section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Skills />
+      </motion.section>
+      <motion.section
+        id="projects"
+        className="section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Projects />
+      </motion.section>
+      <motion.section
+        id="contact"
+        className="section"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <Contact />
+      </motion.section>
       <Footer />
-    </Router>
+    </>
   );
 }
 
