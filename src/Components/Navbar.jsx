@@ -17,13 +17,13 @@ const Navigation = () => (
                     <Nav.Link as="a" href="#about" className="nav-link">About</Nav.Link>
                     <Nav.Link as="a" href="#skills" className="nav-link">Skills</Nav.Link>
                     <Nav.Link as="a" href="#projects" className="nav-link">Projects</Nav.Link>
-                    <Nav.Link as="a" href="#" className="nav-link">Resume</Nav.Link>
+                    <Nav.Link as="a" href="#contact" className="nav-link">Contact</Nav.Link>
                 </Nav>
             </div>
             <Nav className="ms-auto me-3">
-                <Nav.Link as="a" href="#contact" className="premium-link">
+                <Nav.Link as="a" href="CHETHAN-V-Resume.pdf" download="" className="premium-link">
                     <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: '8px' }} />
-                    Contact
+                    Resume
                 </Nav.Link>
             </Nav>
         </Navbar.Collapse>

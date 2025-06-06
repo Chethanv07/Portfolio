@@ -18,7 +18,7 @@ html {
 .custom-navbar {
   background: #f0f0f0;
   padding: 15px 0;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   position: sticky;
   top: 0;
@@ -119,7 +119,7 @@ html {
   transform: scale(1.1);
 }
 
-/* Pill Button Style (used in Home section for "Download Resume") */
+/* Pill Button Style */
 .pill-button {
   display: inline-block;
   padding: 10px 30px;
@@ -140,7 +140,7 @@ html {
 /* Section General Styles */
 .section {
   padding: 60px 15px;
-  width: 100vw;
+  width: 100%;
   margin: 0;
   scroll-margin-top: 80px;
   box-sizing: border-box;
@@ -152,9 +152,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
-
 
 #about {
   background-color: #f5f5f5;
@@ -170,17 +168,6 @@ html {
 
 #contact {
   background-color: #d5d5d5;
-}
-
-.hero-background {
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-  opacity: 0.5;
-  z-index: 0;
 }
 
 .z-1 {
@@ -205,60 +192,6 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Skills Section Specific Styles */
-.skills-heading {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #343a40;
-}
-
-.skills-category {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.skill-badge {
-  background-color: transparent !important;
-  border: 1.5px solid #0D6EFD;
-  color: #0D6EFD !important;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-}
-
-.skill-badge:hover {
-  background-color: #0D6EFD !important;
-  color: #ffffff !important;
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
-}
-
-.skill-badge svg {
-  color: #0D6EFD;
-  font-size: 1rem;
-  margin-right: 8px;
-}
-
-.skill-badge:hover svg {
-  color: #ffffff;
-}
-
-.navbar {
-  z-index: 1000;
-}
-
-footer {
-  background-color: #343a40;
-  color: #ffffff;
-  padding: 20px 0;
-  width: 100vw;
-  margin: 0;
-  margin-top: auto;
 }
 
 /* Skills Section Specific Styles */
@@ -336,12 +269,23 @@ footer {
   font-weight: 600;
 }
 
-/* Responsive Adjustments */
-/*
+.navbar {
+  z-index: 1000;
+}
+
+footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 20px 0;
+  width: 100%;
+  margin: 0;
+  margin-top: auto;
+}
+
+/* Responsive Media Queries */
 @media (max-width: 992px) {
   .section {
     padding: 40px 15px;
-    min-height: auto;
   }
 
   .display-3 {
@@ -457,45 +401,3 @@ footer {
     font-size: 1.2rem;
   }
 }
-
-/* Responsive Adjustments (Relevant Excerpt) */
-/*
-@media (max-width: 992px) {
-  .skills-heading {
-    font-size: 2.5rem;
-  }
-
-  .skills-category {
-    font-size: 1.3rem;
-  }
-
-  .skill-badge {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-
-  .skill-badge svg {
-    font-size: 0.9rem;
-    margin-right: 6px;
-  }
-}
-
-@media (max-width: 576px) {
-  .skills-heading {
-    font-size: 2rem;
-  }
-
-  .skills-category {
-    font-size: 1.2rem;
-  }
-
-  .skill-badge {
-    font-size: 0.85rem;
-    padding: 5px 10px;
-  }
-
-  .skill-badge svg {
-    font-size: 0.85rem;
-    margin-right: 5px;
-  }
-}/*

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import linkedinIcon from '../assets/linkedin.svg';
 import githubIcon from '../assets/github.svg';
@@ -12,11 +12,11 @@ const Home = () => (
         <Container className="position-relative z-1 d-flex justify-content-center align-items-center text-center" style={{ minHeight: '100vh' }}>
             <Row className="w-100">
                 <Col lg={6} md={12} className="mb-4 mb-lg-0">
-                    <h1 className="display-3 fw-bold mb-3">Hi,</h1>
+                    <h1 className="display-5 fw-bold mb-3 text-secondary">Hi, I'm</h1>
                     <h1 className="display-3 fw-bold mb-3">Chethan V</h1>
-                    <p className="lead mb-3">Full-Stack Developer | Software Engineer</p>
+                    <p className="lead mb-3">Full-Stack Developer | Software Devloper</p>
                     <p className="text-muted mb-4">
-                        I specialize in building scalable web and mobile applications using modern technologies like React, Node.js, and Kotlin.
+                        I specialize in building scalable web applications using modern technologies.
                     </p>
                     {/* Social Links */}
                     <div className="d-flex justify-content-center mt-4">
