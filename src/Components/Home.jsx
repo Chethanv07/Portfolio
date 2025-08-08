@@ -19,14 +19,14 @@ const Home = () => (
                         I specialize in building scalable web applications using modern technologies.
                     </p>
                     {/* Social Links */}
-                    <div className="d-flex justify-content-center mt-4">
-                        <a href="https://www.linkedin.com/in/chethan-v07/" target="_blank" rel="noopener noreferrer" className="mx-3 text-dark">
+                    <div className="d-flex justify-content-center mt-4 ">
+                        <a href="https://www.linkedin.com/in/chethan-v07/" target="_blank" rel="noopener noreferrer" className="mx-3 text-dark icon-trans">
                             <img src={linkedinIcon} alt="LinkedIn" height="50px" />
                         </a>
-                        <a href="https://github.com/Chethanv07" target="_blank" rel="noopener noreferrer" className="mx-3 text-dark">
+                        <a href="https://github.com/Chethanv07" target="_blank" rel="noopener noreferrer" className="mx-3 text-dark icon-trans">
                             <img src={githubIcon} alt="GitHub" width="40" height="50" />
                         </a>
-                        <a href="mailto:vchethanv01983@gmail.com" className="mx-3 text-dark">
+                        <a href="mailto:vchethanv01983@gmail.com" className="mx-3 text-dark icon-trans">
                             <img src={gmailIcon} alt="Gmail" height="50" />
                         </a>
                     </div>

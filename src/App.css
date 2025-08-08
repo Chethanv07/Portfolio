@@ -16,15 +16,27 @@ html {
 
 /* Navbar Styles */
 .custom-navbar {
-  background: #f0f0f0;
-  padding: 15px 0;
+  background: linear-gradient(to right, #3b82f6, #1e3a8a);
+
   width: 100%;
-  margin: 0;
-  position: sticky;
+  position: fixed;
+  /* changed to fixed */
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   border-bottom: 2px solid transparent;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Add padding to top of sections so content is not hidden behind navbar */
+.section {
+  padding: 75px 15px 60px;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  scroll-margin-top: 80px;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -41,23 +53,23 @@ html {
 }
 
 .logo-icon {
-  color: #0D6EFD;
+  color: #0dfdad;
   font-size: 1.4rem;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .logo:hover .logo-icon {
   transform: rotate(360deg);
-  color: #0D6EFD;
+  color: #0dfdad;
 }
 
 .menu-container {
-  background: rgba(255, 248, 225, 0.7);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 10px 25px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
@@ -86,7 +98,7 @@ html {
 }
 
 .nav-link:hover {
-  color: #0D6EFD !important;
+  color: white !important;
 }
 
 .premium-link {
@@ -129,21 +141,13 @@ html {
   color: #0D6EFD !important;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .pill-button:hover {
   background: linear-gradient(45deg, #0D6EFD, #1e90ff);
   color: #fff !important;
-}
 
-/* Section General Styles */
-.section {
-  padding: 60px 15px;
-  width: 100%;
-  margin: 0;
-  scroll-margin-top: 80px;
-  box-sizing: border-box;
 }
 
 #home {
@@ -152,6 +156,8 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 0;
 }
 
 #about {
@@ -167,7 +173,7 @@ html {
 }
 
 #contact {
-  background-color: #d5d5d5;
+  background-color: white;
 }
 
 .z-1 {
@@ -242,6 +248,12 @@ html {
   color: #343a40;
 }
 
+.card {
+  background: rgba(160, 158, 158, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 .project-card {
   background-color: transparent !important;
   border: 1.5px solid #0D6EFD;
@@ -269,10 +281,6 @@ html {
   font-weight: 600;
 }
 
-.navbar {
-  z-index: 1000;
-}
-
 footer {
   background-color: #343a40;
   color: #ffffff;
@@ -282,10 +290,18 @@ footer {
   margin-top: auto;
 }
 
+.icon-trans {
+  transition: transform 0.3s ease;
+}
+
+.icon-trans:hover {
+  transform: scale(1.1);
+}
+
 /* Responsive Media Queries */
 @media (max-width: 992px) {
   .section {
-    padding: 40px 15px;
+    padding: 100px 15px 40px;
   }
 
   .display-3 {
@@ -321,6 +337,7 @@ footer {
   .ms-auto {
     margin-left: 0 !important;
     text-align: center;
+
   }
 
   .skills-heading {
@@ -348,6 +365,9 @@ footer {
   .project-title {
     font-size: 1.3rem;
   }
+
+
+
 }
 
 @media (max-width: 576px) {
